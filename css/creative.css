@@ -165,7 +165,7 @@ a {
 }
 
 a:hover {
-  color: #d6370c;
+  color: #F2594B;
   text-decoration: underline;
 }
 
@@ -2816,7 +2816,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-link:hover {
-  color: #d6370c;
+  color: #F2594B;
   text-decoration: underline;
 }
 
@@ -4630,7 +4630,7 @@ input[type="button"].btn-block {
 
 .page-link:hover {
   z-index: 2;
-  color: #d6370c;
+  color: #F2594B;
   text-decoration: none;
   background-color: #e9ecef;
   border-color: #dee2e6;
@@ -9395,7 +9395,7 @@ button.bg-dark:focus {
 }
 
 a.text-primary:hover, a.text-primary:focus {
-  color: #d6370c !important;
+  color: #F2594B !important;
 }
 
 .text-secondary {
@@ -9738,7 +9738,7 @@ header.masthead h1 {
   text-align: center;
   opacity: 0;
   color: #fff;
-  background: rgba(244, 98, 58, 0.9);
+  background: rgba(242, 88, 74, 0.75);
   transition: opacity 0.25s ease;
   text-align: center;
 }
