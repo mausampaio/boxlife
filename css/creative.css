@@ -407,6 +407,23 @@ h6, .h6 {
   width: 4rem;
 }
 
+.map {
+  height: 277px;
+}
+
+.about-sec {
+  padding: 2rem 0;
+}
+
+.about-img {
+  width: 100%;
+  height: 100%;
+}
+
+.about-text {
+  padding: 3rem 0;
+}
+
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
