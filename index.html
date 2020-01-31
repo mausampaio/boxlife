@@ -217,25 +217,39 @@
   <section class="page-section" id="contact">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
+        <div class="col-lg-12 text-center">
           <h2 class="mt-0">Quer falar com a gente?</h2>
           <hr class="divider my-4">
-          <p class="text-muted mb-5">Pronto para começar o seu próximo projeto com a gente? Faça uma ligação ou mande um email que entraremos em contato assim que possível!</p>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
-          <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-          <div>+55 (48) 3555-0149</div>
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-sm-12">
+          <address class="ml-auto">
+            SC-401, 2403
+            <br>
+            Edf. Curiosidade
+            <br>
+            Florianópolis - Santa Catarina - Brasil
+          </address>
+          <p>48 3348-3373</p>
         </div>
-        <div class="col-lg-4 mr-auto text-center">
-          <i class="fab fa-3x fa-instagram mb-3 text-muted"></i>
-          <a class="d-block" target="_blank" href="https://instagram.com/mausampaio">@boxlife</a>
-        </div>
-        <div class="col-lg-4 mr-auto text-center">
-          <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-          <!-- Make sure to change the email address in anchor text AND the link below! -->
-          <a class="d-block" href="mailto:contao@boxlife.com">contato@boxlife.com</a>
+        <div class="col-lg-4 col-sm-12 text-center">
+          <div class="card bg-light mb-3 ml-auto mr-auto" style="max-width: 30rem;">
+            <div class="card-body">
+              <form>
+                <div class="form-group">
+                  <input type="text" id="contactText" class="form-control" placeholder="Seu Nome">
+                </div>
+                <div class="form-group">
+                  <input type="email" id="contactEmail" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" id="contactMsg" rows="3" placeholder="Escreva sua mensagem"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
