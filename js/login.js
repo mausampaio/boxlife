@@ -1,9 +1,31 @@
-function remover(id) {
+function remover(key) {
     var database = firebase.database();
-    database.ref('/messages/' + id).remove();
-    console.log(id);
+    database.ref('/messages/' + key).remove();
+    console.log(key);
     document.getElementById('row').innerHTML = "";
     showData();
+}
+
+function modalUpdate(key) {
+    var database = firebase.database();
+    database.ref('/messages/' + key).once('value', function(snapshot){
+        console.log(snapshot.val());
+        var itemMsg = snapshot.val().mensagem;
+        var itemEmail = snapshot.val().email;
+        modalMsg = document.getElementById('modalMsg');
+        modalTitle = document.getElementById('modalTitle');
+        modalMsg.innerHTML = '<p>'+itemMsg+'</p>';
+        modalTitle.innerHTML = itemEmail;
+        modalButton = document.getElementById('modalButton');
+        modalButton.setAttribute( "onClick", 'update('+key+')');
+    });
+}
+
+function update(key){
+    var database = firebase.database();
+    database.ref('/messages/' + key).update({
+        status: 'Respondido'
+    });
 }
 
 function showData() {
@@ -20,13 +42,11 @@ function showData() {
             nr++;
             var tbody = document.getElementById('row');
             var tr = document.createElement('tr');
-            var detalhes = '<td><button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#'+nr+'" aria-expanded="false" aria-controls="collapse">Detalhes</button></td>';
-            // var msg = '<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detalhes">Detalhes</button></td>';
-            var th = '<th scope="row">'+nr+'</th>'+'<td>'+childEmail+'</td>'+detalhes+'<td>'+childStatus+'</td><td><button type="button" class="btn btn-block btn-danger" onclick="remover('+childKey+')">Remover</button></td><tr class="collapse" id="'+nr+'"><td colspan="5">'+childMsg+'</td></tr>';
+            //var detalhes = '<td><button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#'+nr+'" aria-expanded="false" aria-controls="collapse">Detalhes</button></td>';
+            var detalhes = '<div class="colAcao col-md-6 col-sm-12 mx-auto"><button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#detalhes" onclick="modalUpdate('+childKey+')">Detalhes</button></div>';
+            var th = '<th scope="row">'+nr+'</th>'+'<td>'+childEmail+'</td><td>'+childStatus+'</td><td><div class="divAcao row">'+detalhes+'<div class="col-md-6 col-sm-12 mx-auto"><button type="button" class="btn btn-block btn-danger" onclick="remover('+childKey+')">Remover</button></div></div></td>';
             tr.innerHTML = th;
             tbody.appendChild(tr);
-            // modal = document.getElementById('modalMsg');
-            // modal.innerHTML = childMsg;
             console.log(childKey);
             console.log(childEmail);
         });
