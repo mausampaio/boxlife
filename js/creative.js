@@ -69,5 +69,9 @@ function enviar() {
       email: emailValue,
       mensagem: msgValue,
       status: 'Não respondido'
-  });   
+  });
+  document.getElementById('contactEmail').value = '';
+  document.getElementById('contactMsg').value = '';
+  document.getElementById('contactNome').value = '';
+  alert('Mensagem enviada com sucesso!');   
 }
