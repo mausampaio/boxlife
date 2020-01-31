@@ -1,7 +1,10 @@
 .container {
     padding-top: 2rem;
 }
-.thEmail, .thStatus, .thAcao {
+.thEmail{
+    width: 60%;
+}
+.thStatus, .thAcao {
     width: 30%;
 }
 .thNr {
@@ -18,4 +21,17 @@
     .colAcao {
         padding-bottom: 0.5rem;
     }
+}
+.pull-right {
+    float: right;
+}
+.respondido {
+    font-size: .8rem;
+    color: #5cb85c;
+    margin-right: 3rem;
+}
+.naorespondido {
+    font-size: .8rem;
+    color: #d9534f;
+    margin-right: 3rem;
 }

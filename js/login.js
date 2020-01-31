@@ -39,12 +39,17 @@ function showData() {
             var childEmail = childSnapshot.val().email;
             var childMsg = childSnapshot.val().mensagem;
             var childStatus = childSnapshot.val().status;
+            if (childStatus == 'Respondido'){
+                var spanClass = 'respondido';
+            }else{
+                var spanClass = 'naorespondido';
+            };
             nr++;
             var tbody = document.getElementById('row');
             var tr = document.createElement('tr');
             //var detalhes = '<td><button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#'+nr+'" aria-expanded="false" aria-controls="collapse">Detalhes</button></td>';
             var detalhes = '<div class="colAcao col-md-6 col-sm-12 mx-auto"><button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#detalhes" onclick="modalUpdate('+childKey+')">Detalhes</button></div>';
-            var th = '<th scope="row">'+nr+'</th>'+'<td>'+childEmail+'</td><td>'+childStatus+'</td><td><div class="divAcao row">'+detalhes+'<div class="col-md-6 col-sm-12 mx-auto"><button type="button" class="btn btn-block btn-danger" onclick="remover('+childKey+')">Remover</button></div></div></td>';
+            var th = '<th scope="row">'+nr+'</th>'+'<td>'+childEmail+'<span class="pull-right '+spanClass+'">('+childStatus+')</span></td><td><div class="divAcao row">'+detalhes+'<div class="col-md-6 col-sm-12 mx-auto"><button type="button" class="btn btn-block btn-danger" onclick="remover('+childKey+')">Remover</button></div></div></td>';
             tr.innerHTML = th;
             tbody.appendChild(tr);
             console.log(childKey);
