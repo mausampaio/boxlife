@@ -238,7 +238,7 @@
             <div class="card-body">
               <form>
                 <div class="form-group">
-                  <input type="text" id="contactText" class="form-control" placeholder="Seu Nome">
+                  <input type="text" id="contactNome" class="form-control" placeholder="Seu Nome">
                 </div>
                 <div class="form-group">
                   <input type="email" id="contactEmail" class="form-control" placeholder="Email">
@@ -246,7 +246,7 @@
                 <div class="form-group">
                   <textarea class="form-control" id="contactMsg" rows="3" placeholder="Escreva sua mensagem"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="button" class="btn btn-primary" onclick="enviar()">Enviar</button>
               </form>
             </div>
           </div>
@@ -267,6 +267,11 @@
     </div>
   </footer>
 
+  <!-- Google Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -277,6 +282,7 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/creative.js"></script>
+  <script src="js/initFirebase.js"></script>
 
 </body>
 

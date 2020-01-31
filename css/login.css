@@ -26,15 +26,18 @@
     float: right;
 }
 .respondido {
-    font-size: .8rem;
-    color: #5cb85c;
+    /* font-size: .8rem;
+    color: #5cb85c; */
     margin-right: 3rem;
 }
 .naorespondido {
-    font-size: .8rem;
-    color: #d9534f;
+    /* font-size: .8rem;
+    color: #d9534f; */
     margin-right: 3rem;
 }
 .navContainer {
     padding-top: 0;
+}
+.bold {
+    font-weight: bold;
 }

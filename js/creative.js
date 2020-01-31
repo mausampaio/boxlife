@@ -56,3 +56,18 @@
   });
 
 })(jQuery); // End of use strict
+
+function enviar() {
+  var emailValue = document.getElementById('contactEmail').value;
+  var msgValue = document.getElementById('contactMsg').value;
+  var nomeValue = document.getElementById('contactNome').value;
+  var timestamp = new Date().getTime();
+  // A variavel database vai receber as funcoes de acesso ao database
+  var database = firebase.database();
+  database.ref('/messages/' + timestamp).set({
+      nome: nomeValue,
+      email: emailValue,
+      mensagem: msgValue,
+      status: 'Não respondido'
+  });   
+}
